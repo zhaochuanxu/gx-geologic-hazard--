@@ -1,0 +1,175 @@
+﻿<!doctype html>
+<html>
+<head>
+
+    @Styles.Render("~/bundles/18830/css")
+    @Styles.Render("~/bundles/Bootstarp/css")
+    @Styles.Render("~/bundles/Bootstarp/css")
+  
+    <meta charset="utf-8">
+    <meta content="广西地质灾害数据库" http-equiv="keywords">
+    <meta name="description" content="广西地质灾害数据库">
+    <meta name="applicable-device" content="pc,mobile">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>广西地质灾害数据库</title>
+
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+    <script type="text/javascript" src="js/public.js"></script><!-- 菜单js等-->
+    <!-- 时间选择js -->
+    @Scripts.Render("~/bundles/18830/js")
+    <script type="text/javascript" src="js/laydate.js"></script>
+
+</head>
+
+
+
+<body>
+
+    <!--头部-->
+    <div class="topbox bg">
+        <div class="wid_main fix">
+            <div class="logo l"><img src="~/images/logo.png" alt="logo" /></div>
+            <!-- 搜索 -->
+            <div class="search_box r bora_5">
+                <form>
+                    <div>
+                        <input type="text" name="" placeholder="请输入关键词检索">
+                        <button type="submit"><img src="~/images/18830/search.png"></button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- top end -->
+
+
+
+    <!-- 主体内容框 -->
+    <div class="contentbox wid_main bora_5">
+        <div class="content">
+
+            <!-- 导航栏部分 -->
+            <div class="top_nav bg bora_5 ovh">
+                <ul class="fix">
+                    <li class="cur">
+                        <a href="/Home/Index">首 页</a>
+                    </li>
+
+                    <li>
+                        <a href="/News/Index">新闻资讯</a>
+                    </li>
+                    <li>
+                        <a href="/GDDB/index">数据查看</a>
+                    </li>
+                    <li>
+                        <a href="newslist.html">抗震防灾知识</a>
+                    </li>
+                    <li>
+                        <a href="~/DownLoad">数据下载</a>
+                    </li>
+ 
+
+                </ul>
+            </div>
+            <!-- 导航end -->
+
+
+
+            <!-- 需要添加的最新通知或公告滚动部分 -->
+            <div class="gonggao bdb_d fix">
+                <div class="txtScroll-top l fix">
+                    <div class="l tit"><img src="~/images/18830/icon_notice.png"><b class="dib vm">信息公告：</b></div>
+                    <div class="bd l">
+                        <ul class="infoList">
+                            <li><a href="news_xq.html">出门记得戴口罩，注意防范</a><span class="date">2020-01-21</span></li>
+                            <li><a href="news_xq.html">新疆叶城县发生3.1级地震</a><span class="date">2020-02-25 </span></li>
+                            <li><a href="news_xq.html">云南昭通市永善县发生3.9级地震</a><span class="date">2020-02-28</span></li>
+                            <li><a href="news_xq.html">台湾花莲县发生4.9级地震</a><span class="date">2020-02-26 </span></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    jQuery(".txtScroll-top").slide({ titCell: ".hd ul", mainCell: ".bd ul", effect: "topLoop", autoPlay: true, vis: 1, interTime: 4000, });
+                </script>
+
+                <!-- 时间 -->
+                <div class="timebox fc r">
+                    <script type="text/javascript" src="~/Content/18830/JS/show_date.js"></script>
+                </div>
+            </div>
+
+
+
+
+            <!--登录注册按钮 由——Lo ginPartial控制-->
+            <div class="id">
+                <div>
+                    <ul class="nav navbar-nav navbar-right">
+                      <!--  <li><a href="@ViewBag.User_Href_1">@ViewBag.User_State_1</a></li>
+
+                        <li><a href="@ViewBag.User_Href_2">@ViewBag.User_State_2</a></li>-->
+                        @Html.Partial("_LoginPartial")
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+            <!--主体-->
+            <div id="body">
+                <br />
+                <br />
+                @RenderBody()
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <!-- top end -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+
+
+
+
+
+    <!-- 主尾-->
+    <div class="footerbox bg">
+        <div class="wid_main fix">
+            <div class="l">
+                <a href="http://121.43.68.40/exposure/jiucuo.html?site_code=5200000083&url=www.guizhou.gov.cn" target="blank" class="dib vm"><img src="~/images/10830/cuo.png" /></a>
+                <a href="http://www.51qianduan.com//sitename?method=show&id=09D70ADDD9E64427E053022819AC3042" target="blank" class="dib vm"><img src="~/images/130/dangzheng.png"></a>
+            </div>
+            <div class="l txt">
+                <p>版权所有：赵传旭团队&nbsp;&nbsp;&nbsp;地址：广西壮族自治区桂林市雁山区雁中路一号</p>
+                <p><img src="~/images/18830/beian.png">桂ICP备19011968号&nbsp;&nbsp;&nbsp;桂ICP备19011968号-1&nbsp;&nbsp;&nbsp;</p>
+                <p>赵传旭团队建设和维护</p>
+            </div>
+            <ul class="r other fix">
+                <li><a href="contact.html">联系我们</a></li>
+                <li><a href="~/Admin/Login">管理网站</a></li>
+                <li><a href="info_public.html">信息公开</a></li>
+                <li><a href="newslist.html">办事指南</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+</body>
+</html>

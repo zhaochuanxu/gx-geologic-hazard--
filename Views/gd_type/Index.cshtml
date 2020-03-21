@@ -1,0 +1,51 @@
+﻿@model IEnumerable<GU_DATA.Models.gd_type>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.main_charact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.reason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.demange_charcat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.main_charact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.demange_charcat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,125 @@
+﻿<!--model IEnumerable<GU_DATA.Entitys.gd_user>-->
+@using PagedList.Mvc
+@model PagedList.IPagedList<GU_DATA.Entitys.gd_user>
+
+
+@{
+
+    Layout = null;
+
+
+    ViewBag.Title = "List_User";
+}
+
+
+@Styles.Render("~/bundles/Bootstarp/css")
+@Styles.Render("~/bundles/Bootstarp/css")
+
+
+    <table class="table">
+        <tr>
+            @*<th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_Number)
+        </th>
+
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+
+
+        <th>
+            @Html.DisplayNameFor(model => model.CreatDay)
+        </th>*@
+            <th>ID</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>真实姓名</th>
+            <th>身份证号</th>
+            <th>电话号码</th>
+            <th>邮箱</th>
+            <th>地址</th>
+            <th>创建日期</th>
+
+
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.UID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_Number)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatDay)
+        </td>
+
+
+
+
+        <td>
+            @Html.ActionLink("修改", "Edit_User", new { id = item.UID }) |
+            @Html.ActionLink("查看", "Detail_User", new { id = item.UID }) |
+            @Html.ActionLink("删除", "Delete_User", new { id = item.UID })
+        </td>
+    </tr>
+        }
+
+    </table>
+
+
+<div>
+    @*分页主要代码*@
+    每页 @Model.PageSize 条记录，共 @Model.PageCount 页，当前第 @Model.PageNumber 页
+    @Html.PagedListPager(Model, page => Url.Action("List_User", new { page }))
+</div>

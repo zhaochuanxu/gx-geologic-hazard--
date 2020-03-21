@@ -1,0 +1,277 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+
+@{
+    ViewBag.Title = "后台管理系统";
+    Layout = null;
+}
+@Styles.Render("~/bundles/Bootstarp/css")
+@Styles.Render("~/bundles/Bootstarp/css")
+
+<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    <title>管理员后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/style.css" rel="stylesheet" />
+
+    <script src="~/Content/Bootstarp/jquery-1.10.2.js"></script>
+    <script src="~/Content/Bootstarp/js/bootstrap.min.js"></script>
+
+
+    <style>
+
+
+        /* 后台管理框架的样式 */
+
+        /* 下拉菜单和导航 */
+        .navbar-collapse {
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .nav > li {
+            text-align: center;
+        }
+
+            .nav > li > a {
+                color: #444;
+                margin: 0 5px;
+            }
+
+        .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+            background-color: #222222;
+        }
+
+        .dropdown-menu {
+            float: none;
+            position: initial;
+            min-width: 200px;
+            margin-left: 0;
+            background-color: #E3E3E3;
+            box-shadow: none;
+            text-align: center;
+        }
+
+            .dropdown-menu > li > a {
+                padding: 10px 15px;
+            }
+
+        /* 主体样式 */
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background-color: #FFFFFF;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        .pageSidebar {
+            width: 240px;
+            height: 100%;
+            padding-bottom: 30px;
+            overflow: auto;
+            background-color: #e3e3e3;
+        }
+
+        .splitter {
+            width: 5px;
+            height: 100%;
+            bottom: 0;
+            left: 240px;
+            position: absolute;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .pageContent {
+            height: 100%;
+            min-width: 768px;
+            left: 246px;
+            top: 0;
+            right: 0;
+            z-index: 3;
+            padding-bottom: 30px;
+            position: absolute;
+        }
+
+        .pageContainer {
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 53px;
+            overflow: auto;
+            position: absolute;
+            width: 100%;
+        }
+
+        .footer {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            margin-top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 10;
+            background-color: #DFDFDF;
+        }
+    </style>
+
+</head>
+
+
+
+<body data-spy="scroll" data-target="#myScrollspy">
+    <form>
+
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/Home/Index">广西地址灾害数据库后台管理系统</a>
+                </div>
+
+
+                <!-- AnonymousTemplate为还没有登陆时候显示的内容-->
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>@Html.ActionLink("你好！ " + Context.User.Identity.GetUserName(), "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                    <li>@Html.ActionLink("注销", "Log_off", "Account")</li>
+                </ul>
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <!-- 中间主体内容部分 -->
+        <div class="pageContainer">
+            <!-- 左侧导航栏 -->
+            <div class="pageSidebar">
+                <ul class="nav nav-stacked nav-pills">
+
+                 <!--个人信息管理-->
+                  <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="nav4.html" target="mainFrame">
+                        用户管理<span class="caret"></span>
+                    </a> 
+        <ul class="dropdown-menu">
+            <li>
+                <a href="~/Admin/List_User" target="mainFrame">查看用户</a>
+            </li>
+            <li>
+                <a href="~/Admin/Creat_User" target="mainFrame">创建用户</a>
+            </li>
+
+
+        </ul>
+                    </li>
+                 <!--个人信息管理结束-->
+
+ 
+                   <!--个 人密码管理-->
+                  <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="nav4.html" target="mainFrame">
+                                    密码管理<span class="caret"></span>
+                                </a>
+
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="iframe/Admin_User/LookUser.aspx" target="mainFrame">修改密码</a>
+                                    </li>
+
+                                </ul>
+                            </li>
+                    <!--结束-->
+                  <!--查看下载记录-->
+                <li role="presentation">
+                                <a href="iframe/Admin_food/show_food.aspx" target="mainFrame">下载记录</a>
+                            </li>
+
+
+                   <!--退出系统-->
+                <li role="presentation">
+                                @Html.ActionLink("退出管理系统", "Index", "Home")
+                            </li>
+
+          </ul>
+            </div>
+
+            <!-- 左侧导航和正文内容的分隔线 -->
+            <div class="splitter"></div>
+            <!-- 正文内容部分 -->
+            <div class="pageContent">
+                <iframe src="~/Admin/Welcome" id="mainFrame" name="mainFrame"
+                        frameborder="0" width="100%" height="100%" frameBorder="0">
+                </iframe>
+            </div>
+
+        </div>
+        <!-- 底部页脚部分 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <hr>
+
+        <!-- 底部页脚部分 -->
+        <div class="footer">
+
+
+            <footer>
+
+                <div>
+
+                </div>
+                <p>&copy; @DateTime.Now.Year  广西地质灾害数据库后台管理系统 </p>
+            </footer>
+        </div>
+
+
+        <script src="Scripts/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            $(".nav li").click(function () {
+                $(".active").removeClass('active');
+                $(this).addClass("active");
+            });
+
+        </script>
+        <script src="Scripts/js/bootstrap.min.js"></script>
+
+    </form>
+</body>
+
+
+</html>

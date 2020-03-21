@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_infoModel1StoreContainer" CdmEntityContainer="db_infoEntities1">
+    <EntitySetMapping Name="dg_type">
+      <EntityTypeMapping TypeName="db_infoModel1.dg_type">
+        <MappingFragment StoreEntitySet="dg_type">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

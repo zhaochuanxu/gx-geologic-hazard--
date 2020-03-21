@@ -1,0 +1,102 @@
+﻿@model GU_DATA.Entitys.gd_user
+@using GU_DATA.Controllers
+
+@{
+
+
+    ViewBag.Title = "个人信息";
+    Layout = null;
+
+
+
+
+}
+
+
+
+@Styles.Render("~/bundles/Bootstarp/css")
+@Styles.Render("~/bundles/Bootstarp/css")
+
+<h2>修改填写详细信息</h2>
+
+@using (Html.BeginForm("Edit", "User"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+        <!--姓名-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <!--身份证号-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_Number, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_Number, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_Number, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <!--电话号码-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <!--地址-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <!--邮箱-->
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="提交" class="btn btn-default" />
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+}
+
+<div>
+    @Html.ActionLink("返回主页", "Index", "Home")
+
+</div>

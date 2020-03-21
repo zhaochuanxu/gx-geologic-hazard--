@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gddbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="gd_accident">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id" Type="Int32" />
+    <Property Name="time" Type="DateTime" />
+    <Property Name="lon" Type="Decimal" />
+    <Property Name="lat" Type="Decimal" />
+    <Property Name="locate" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="level" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="demage" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ge_charact" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="gd_loss">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="time" Type="DateTime" />
+    <Property Name="direct_dead" Type="Int64" />
+    <Property Name="injured" Type="Int32" />
+    <Property Name="indirect_dead" Type="Int32" />
+    <Property Name="missing" Type="Int32" />
+    <Property Name="building_living_failing" Type="Int32" />
+    <Property Name="building_working_failing" Type="Int32" />
+    <Property Name="building_industry_failing" Type="Int32" />
+    <Property Name="building_living_damaged" Type="Int32" />
+    <Property Name="building_woring_demaged" Type="Int32" />
+    <Property Name="building_industry_dema" Type="Int32" />
+    <Property Name="other_loss" Type="Decimal" />
+    <Property Name="other_loss_dec" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="other" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="gd_type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="main_charact" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="reason" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="demange_charcat" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="gddbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="gd_accident" EntityType="Self.gd_accident" />
+    <EntitySet Name="gd_loss" EntityType="Self.gd_loss" />
+    <EntitySet Name="gd_type" EntityType="Self.gd_type" />
+  </EntityContainer>
+</Schema>

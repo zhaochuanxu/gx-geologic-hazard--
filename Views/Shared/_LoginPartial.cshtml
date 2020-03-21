@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+
+@if (Request.IsAuthenticated)
+{
+    <div class="id">
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>@Html.ActionLink("你好！ " + Context.User.Identity.GetUserName(), "Index", "User", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <li>@Html.ActionLink("注销","Log_off","Account")</li>
+                
+            </ul>
+        </div>
+    </div>
+
+}
+
+else
+{
+
+
+
+    <div class="id">
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                <!-- <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>-->
+
+                <li>@Context.User.Identity.GetUserName() </li>
+                <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+            </ul>
+        </div>
+    </div>
+
+}

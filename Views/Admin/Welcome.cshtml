@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.EntityFramework
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Welcome</title>
+</head>
+@Styles.Render("~/bundles/Bootstarp/css")
+@Styles.Render("~/bundles/Bootstarp/css")
+
+<body>
+    <div>
+        <h1>欢迎 @this.User.Identity.Name. 登录后台管理系统</h1>
+    </div>
+</body>
+</html>

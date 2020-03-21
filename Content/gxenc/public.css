@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* 头部 Start */
+#top { height:auto; width:100%; min-width:1240px; margin:0 auto;}
+.top { height:100px; width:100%; background-image:url(../images/earthquake/top-img.png);}
+.top .top-box { height:100%; width:1200px; margin:0 auto;}
+.top .top-box .top-box-left { height:auto; width:350px; /*background:url(../images/earthquake/LOGO.png) bottom no-repeat;*/ float:left; padding-top:20px;}
+.top .top-box .top-box-right { height:auto; width:300px; float: right;}
+.top .top-box .top-box-right ul { height:50px; width:300px; float:left; padding-top:10px;}
+.top .top-box .top-box-right ul li { height: auto; width:50px; float:left; text-align:center; color:#FFF;}
+.top .top-box .top-box-right ul li a { color:#FFF;}
+/* 头部 End */
+/* 导航 Start */
+#nav { height:36px; width:100%; min-width:1240px; margin:0 auto;background:url(../images/earthquake/nav-img.png); z-index:999999990!important;}
+.nav { height:36px; width:1200px; margin:0px auto; border-top:1px solid #074a96;z-index:999999991!important;}
+.nav ul { height:100%; width:1200px; float:left; z-index:999999992!important;}
+.nav ul li { height:auto; width:130px; float:left; text-align:center; padding:0px 10px 0 0; line-height:36px;POSITION: relative;display:block;z-index:999999993!important;}
+.nav ul li.on { height:32px;background:url(../images/earthquake/on-img.png); border-radius:5px; font-weight:bold;}
+.nav ul li a { color:#FFF; font-size:14px;}
+/*.nav .selectData{ width:250px; height:100%; float:right; line-height:36px; color:#fff; text-align:right}*/
+
+.nav-box .multiUl LI A.on {font-weight: bold; color: #dfe8d9; text-decoration: none}
+
+/*#Nav LI.s {display: inline; float: left; width: 8px; color: #517b55; line-height: 35px; height: 35px; text-align: center}*/
+.nav-box .multiUl LI BLOCKQUOTE { width:145px; display: none; left:0px; position: absolute; top: 36px; height: auto; z-index:999999994!important;}
+.nav-box .multiUl LI BLOCKQUOTE .ChildNavIn {padding-right: 0px; padding-left: 0px; background:#fafafa; padding-bottom: 3px; overflow: hidden; width: 100%; color: #dee6e9; height: auto; text-align: center; z-index:999999995!important;}
+.nav-box .multiUl LI BLOCKQUOTE .ChildNavIn A { display: block; float: left; padding:4px 0px; margin: 3px 0px 3px 0px; width: 100%; color: #0a67d1; line-height: 24px; border-bottom: #255f51 1px dotted; text-align: center; font-size:12px; z-index:9999999;}
+.nav-box .multiUl LI BLOCKQUOTE A:hover {background: #0a67d1; color: #fff!important; text-decoration:none; z-index:9999999;}
+.nav-box .multiUl #TopNavDept {}
+.nav-box .multiUl #TopNavDept BLOCKQUOTE {display: none; left: -254px}
+.nav-box .multiUl #TopNavDept BLOCKQUOTE .ChildNavIn {background: #1b453b; width: 1000px}
+
+/* 导航 End */
+/* banner Start */
+#banner { height:auto; width:100%; margin:0 auto; overflow:hidden;}
+.banner { height:408px; width:100%; margin:0 auto; background:url(../images/earthquake/banner.png) center no-repeat; }
+/* banner End */
+/* 主体 Start */
+#main { height:auto; width:100%; min-width:1240px; margin:20px auto 10px auto; }
+.main { height:auto; width:1200px; margin:0 auto; min-width:1240px;}
+/* 主体 Start */
+#mainBox { height:auto; width:100%; margin:0px auto; overflow:hidden;min-width:1240px;}
+.mainBox { height:auto; width:1200px; margin:0px auto; overflow:hidden; padding-bottom:15px;}
+/* 主体 End */
+/* 主体 End */
+/* 底部 Start */
+#footer { height:auto; width:100%; min-width:1240px; background-color:#efefef; color:#666; font-size:12px;}
+.footer { height:90px; width:1000px; margin:0px auto; text-align:center; padding-top:15px; line-height:26px;}
+.footer p{ width:100%; float:left; text-align:center;}
+.footer p a{ padding:0px 10px; color:#000;}
+/* 底部 End */
+
+/* online service start */
+*body {
+    background-attachment: fixed;
+    background-image: url(about:blank); /* 必须地，防抖动 */
+}
+.online{ right:0;top:220px;width:190px;height:auto;position:fixed; font-size:12px; z-index:9999;}
+.online_default {display:block;/*right:0;top:220px;cursor:pointer;position:fixed;*/
+	float: right;
+	height: 50px;
+	overflow: hidden;
+	width: 50px;
+	position: fixed;
+	top: 200px;
+	cursor: pointer;
+	right: 0px;
+/* 兼容IE6不支持 fixed */
+_position: absolute;
+_right: auto;
+_left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||0));
+_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 0)||0)-(parseInt(this.currentStyle.marginBottom, 0)||100)));
+
+}
+.online_hover{display:none;/*left:0;width:190px;position:absolute;height:auto;float:right; display: none;*/
+	float: right;
+	height: auto;
+	overflow: hidden;
+	width: 190px;
+	position: fixed;
+	top: 200px;
+	cursor: pointer;
+/* 兼容IE6不支持 fixed */
+right: 0px;
+_position: absolute;
+_right: auto;
+_left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||0));
+_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 100)||100)-(parseInt(this.currentStyle.marginBottom, 100)||100)));
+}
+online_hover img{ width:10px; height:10px; float:left;}
+	.default_type{ background:url(../images/online_default.png) no-repeat;width:30px;height:151px;}
+	.online_hover_left{float:left;}
+	.online_hover_right{ width:160px; height:auto; overflow:hidden; float:left;}
+	.online_txt_top{ width:160px; height:15px; background:url(../images/online_hover.png) no-repeat top left ; overflow:hidden;}
+	.online_txt{ width:150px; height:auto; padding-left:10px; overflow:hidden; line-height:28px; background:url(../images/online_hover_m.png) repeat-y left;}
+	.online_txt_bottom{ width:160px; height:15px; background:url(../images/online_hover.png) no-repeat bottom left ;overflow:hidden;}
+/* end online service */
+
+
+.to_top {
+	background: url("../images/gotop.gif") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 50px;
+	overflow: hidden;
+	width: 50px;
+	position: fixed;
+	bottom: 20px;
+	cursor: pointer;
+	right: 20px;
+	_position: absolute;
+	_right: auto;
+ _left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||20));
+ _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||20)-(parseInt(this.currentStyle.marginBottom, 10)||0)));
+}
+.feedback{
+background: url("../images/feedback.gif") no-repeat scroll 0 0 transparent;
+	float: left;
+	height: 25px;
+	overflow: hidden;
+	width: 50px;
+	position: fixed;
+	bottom: 5px;
+	cursor: pointer;
+	right: 20px;
+	_position: absolute;
+	_right: auto;
+ _left: expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft, 10)||0)-(parseInt(this.currentStyle.marginRight, 10)||20));
+ _top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop, 10)||20)-(parseInt(this.currentStyle.marginBottom, 10)||20)));
+}
+
+
+/*下面是对联广告的css代码*/
+.duilian{top:60px;position:absolute; width:102px; overflow:hidden; display:none; z-index:999;}
+.duilian_left{ left:5px;}
+.duilian_right{right:5px;}
+.duilian_con{border:#CCC solid 1px; width:100px; height:auto; max-height:450px; overflow:hidden;}
+.duilian_close{ width:100%; height:24px; line-height:24px; text-align:center; display:block; font-size:13px; color:#555555; text-decoration:none;}
+
+/*弹窗样式*/
+.modal {
+  display: none;
+  width: auto;
+  border: solid 10px rgba(207,207,207,0.3);
+  background: #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  -o-box-shadow: 0 0 10px #000;
+  -ms-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+  z-index: 9999!important;
+}
+
+.modal { -moz-background-clip: border; /* Firefox 3.6 */ -webkit-background-clip: border; /* Safari 4? Chrome 6? */
+background-clip: border-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */ -moz-background-clip: padding; /* Firefox 3.6 */
+-webkit-background-clip: padding; /* Safari 4? Chrome 6? */ background-clip: padding-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */
+-moz-background-clip: content; /* Firefox 3.6 */ -webkit-background-clip: content; /* Safari 4? Chrome 6? */
+background-clip: content-box; /* Firefox 4, Safari 5, Opera 10, IE 9 */ } 
+
+.modal a.close-modal {
+  position: absolute;
+  top: -22px;
+  right: -22px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  text-indent: -9999px;
+  background: url(../images/close.png) no-repeat 0 0;
+}
+
+.modal-spinner {
+  display: none;
+  width: 64px;
+  height: 64px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-right: -32px;
+  margin-top: -32px;
+  background: url(../images/spinner.gif) #111 no-repeat center center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+
+/*返回顶部*/
+#elevator_item {
+	width: 60px;
+	height: 100px;
+	position: fixed;
+	right: 0px;
+	bottom: 5px;
+	-webkit-transition: opacity .4s ease-in-out;
+	-moz-transition: opacity .4s ease-in-out;
+	-o-transition: opacity .4s ease-in-out;
+	opacity: 1;
+	z-index: 100020;
+	display: none;
+}
+#elevator_item.off {
+	opacity: 0;
+	visibility: hidden
+}
+#elevator {
+	display: block;
+	width: 60px;
+	height: 50px;
+	background: url(../images/icon_top.png) center center no-repeat;
+	background-color: #444;
+	background-color: rgba(0,0,0,.6);
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.2);
+	cursor: pointer;
+	margin-bottom: 10px
+}
+#elevator:hover {
+	background-color: rgba(0,0,0,.7)
+}
+#elevator:active {
+	background-color: rgba(0,0,0,.75)
+}
+#elevator_item .qr {
+	display: block;
+	width: 60px;
+	height: 40px;
+	border-radius: 2px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.2);
+	cursor: pointer;
+	background: url(../images/icon_code.png) center center no-repeat;
+	background-color: #444;
+	background-color: rgba(0,0,0,.6)
+}
+#elevator_item .qr:hover {
+	background-color: rgba(0,0,0,.7)
+}
+#elevator_item .qr:active {
+	background-color: rgba(0,0,0,.75)
+}
+#elevator_item .qr-popup {
+	width: 170px;
+	height: 200px;
+	background: #fff;
+	box-shadow: 0 1px 8px rgba(0,0,0,.1);
+	position: absolute;
+	left: -180px;
+	bottom: 0;
+	border-radius: 2px;
+	display: none;
+	text-align: center
+}
+#elevator_item .qr-popup .code-link {
+	display: block;
+	margin: 10px;
+	color: #777
+}
+#elevator_item .qr-popup .code {
+	display: block;
+	margin-bottom: 10px
+}
+#elevator_item .qr-popup .arr {
+	width: 6px;
+	height: 11px;
+	/*background: url(../images/code_arrow.png) 0 0 no-repeat;*/
+	position: absolute;
+	right: -6px;
+	bottom: 14px
+}

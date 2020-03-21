@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="gddbModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="gd_accident">
+      <EntityTypeMapping TypeName="gddbModel.gd_accident">
+        <MappingFragment StoreEntitySet="gd_accident">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="lon" ColumnName="lon" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="locate" ColumnName="locate" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="demage" ColumnName="demage" />
+          <ScalarProperty Name="ge_charact" ColumnName="ge_charact" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gd_loss">
+      <EntityTypeMapping TypeName="gddbModel.gd_loss">
+        <MappingFragment StoreEntitySet="gd_loss">
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="direct_dead" ColumnName="direct_dead" />
+          <ScalarProperty Name="injured" ColumnName="injured" />
+          <ScalarProperty Name="indirect_dead" ColumnName="indirect_dead" />
+          <ScalarProperty Name="missing" ColumnName="missing" />
+          <ScalarProperty Name="building_living_failing" ColumnName="building_living_failing" />
+          <ScalarProperty Name="building_working_failing" ColumnName="building_working_failing" />
+          <ScalarProperty Name="building_industry_failing" ColumnName="building_industry_failing" />
+          <ScalarProperty Name="building_living_damaged" ColumnName="building_living_damaged" />
+          <ScalarProperty Name="building_woring_demaged" ColumnName="building_woring_demaged" />
+          <ScalarProperty Name="building_industry_dema" ColumnName="building_industry_dema" />
+          <ScalarProperty Name="other_loss" ColumnName="other_loss" />
+          <ScalarProperty Name="other_loss_dec" ColumnName="other_loss_dec" />
+          <ScalarProperty Name="other" ColumnName="other" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gd_type">
+      <EntityTypeMapping TypeName="gddbModel.gd_type">
+        <MappingFragment StoreEntitySet="gd_type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="main_charact" ColumnName="main_charact" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="demange_charcat" ColumnName="demange_charcat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gd_user">
+      <EntityTypeMapping TypeName="gddbModel.gd_user">
+        <MappingFragment StoreEntitySet="gd_user">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CreatDay" ColumnName="CreatDay" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Ip_address" ColumnName="Ip address" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

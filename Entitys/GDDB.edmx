@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="gddbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="gd_accident">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="id" Type="int" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="lon" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="lat" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="locate" Type="varchar" MaxLength="32" />
+          <Property Name="level" Type="varchar" MaxLength="32" />
+          <Property Name="demage" Type="varchar" MaxLength="32" />
+          <Property Name="ge_charact" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="gd_loss">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="time" Type="datetime" Precision="0" />
+          <Property Name="direct_dead" Type="uint" />
+          <Property Name="injured" Type="int" />
+          <Property Name="indirect_dead" Type="int" />
+          <Property Name="missing" Type="int" />
+          <Property Name="building_living_failing" Type="int" />
+          <Property Name="building_working_failing" Type="int" />
+          <Property Name="building_industry_failing" Type="int" />
+          <Property Name="building_living_damaged" Type="int" />
+          <Property Name="building_woring_demaged" Type="int" />
+          <Property Name="building_industry_dema" Type="int" />
+          <Property Name="other_loss" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="other_loss_dec" Type="varchar" MaxLength="100" />
+          <Property Name="other" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="gd_type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="main_charact" Type="varchar" MaxLength="32" />
+          <Property Name="reason" Type="varchar" MaxLength="32" />
+          <Property Name="demange_charcat" Type="varchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="gd_user">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="ConfirmPassword" Type="varchar" MaxLength="32" />
+          <Property Name="ID_Name" Type="varchar" MaxLength="32" />
+          <Property Name="ID_Number" Type="varchar" MaxLength="32" />
+          <Property Name="Phone" Type="varchar" MaxLength="32" />
+          <Property Name="Email" Type="varchar" MaxLength="32" />
+          <Property Name="CreatDay" Type="datetime" Precision="0" />
+          <Property Name="IP" Type="varchar" MaxLength="32" />
+          <Property Name="Ip address" Type="varchar" MaxLength="32" />
+          <Property Name="Address" Type="varchar" MaxLength="32" />
+          <Property Name="type" Type="varchar" MaxLength="32" />
+          <Property Name="Change_times" Type="int" />
+        </EntityType>
+        <EntityContainer Name="gddbModelStoreContainer">
+          <EntitySet Name="gd_accident" EntityType="Self.gd_accident" Schema="gddb" store:Type="Tables" />
+          <EntitySet Name="gd_loss" EntityType="Self.gd_loss" Schema="gddb" store:Type="Tables" />
+          <EntitySet Name="gd_type" EntityType="Self.gd_type" Schema="gddb" store:Type="Tables" />
+          <EntitySet Name="gd_user" EntityType="Self.gd_user" Schema="gddb" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gddbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="gd_accident">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="lon" Type="Decimal" />
+          <Property Name="lat" Type="Decimal" />
+          <Property Name="locate" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="level" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="demage" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ge_charact" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gd_loss">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time" Type="DateTime" />
+          <Property Name="direct_dead" Type="Int64" />
+          <Property Name="injured" Type="Int32" />
+          <Property Name="indirect_dead" Type="Int32" />
+          <Property Name="missing" Type="Int32" />
+          <Property Name="building_living_failing" Type="Int32" />
+          <Property Name="building_working_failing" Type="Int32" />
+          <Property Name="building_industry_failing" Type="Int32" />
+          <Property Name="building_living_damaged" Type="Int32" />
+          <Property Name="building_woring_demaged" Type="Int32" />
+          <Property Name="building_industry_dema" Type="Int32" />
+          <Property Name="other_loss" Type="Decimal" />
+          <Property Name="other_loss_dec" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="other" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gd_type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="main_charact" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="reason" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="demange_charcat" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="gd_user">
+          <Key>
+            <PropertyRef Name="UID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatDay" Type="DateTime" />
+          <Property Name="IP" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Ip_address" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="true" />
+          <Property Name="type" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ConfirmPassword" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="UID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Number" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Change_times" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GDDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="gd_accident" EntityType="Self.gd_accident" />
+          <EntitySet Name="gd_loss" EntityType="Self.gd_loss" />
+          <EntitySet Name="gd_type" EntityType="Self.gd_type" />
+          <EntitySet Name="gd_user" EntityType="Self.gd_user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gddbModelStoreContainer" CdmEntityContainer="GDDBEntities">
+          <EntitySetMapping Name="gd_accident">
+            <EntityTypeMapping TypeName="gddbModel.gd_accident">
+              <MappingFragment StoreEntitySet="gd_accident">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="lon" ColumnName="lon" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="locate" ColumnName="locate" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="demage" ColumnName="demage" />
+                <ScalarProperty Name="ge_charact" ColumnName="ge_charact" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gd_loss">
+            <EntityTypeMapping TypeName="gddbModel.gd_loss">
+              <MappingFragment StoreEntitySet="gd_loss">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="direct_dead" ColumnName="direct_dead" />
+                <ScalarProperty Name="injured" ColumnName="injured" />
+                <ScalarProperty Name="indirect_dead" ColumnName="indirect_dead" />
+                <ScalarProperty Name="missing" ColumnName="missing" />
+                <ScalarProperty Name="building_living_failing" ColumnName="building_living_failing" />
+                <ScalarProperty Name="building_working_failing" ColumnName="building_working_failing" />
+                <ScalarProperty Name="building_industry_failing" ColumnName="building_industry_failing" />
+                <ScalarProperty Name="building_living_damaged" ColumnName="building_living_damaged" />
+                <ScalarProperty Name="building_woring_demaged" ColumnName="building_woring_demaged" />
+                <ScalarProperty Name="building_industry_dema" ColumnName="building_industry_dema" />
+                <ScalarProperty Name="other_loss" ColumnName="other_loss" />
+                <ScalarProperty Name="other_loss_dec" ColumnName="other_loss_dec" />
+                <ScalarProperty Name="other" ColumnName="other" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gd_type">
+            <EntityTypeMapping TypeName="gddbModel.gd_type">
+              <MappingFragment StoreEntitySet="gd_type">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="main_charact" ColumnName="main_charact" />
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="demange_charcat" ColumnName="demange_charcat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gd_user">
+            <EntityTypeMapping TypeName="gddbModel.gd_user">
+              <MappingFragment StoreEntitySet="gd_user">
+                <ScalarProperty Name="Change_times" ColumnName="Change_times" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ID_Number" ColumnName="ID_Number" />
+                <ScalarProperty Name="ID_Name" ColumnName="ID_Name" />
+                <ScalarProperty Name="UID" ColumnName="UID" />
+                <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreatDay" ColumnName="CreatDay" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Ip_address" ColumnName="Ip address" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

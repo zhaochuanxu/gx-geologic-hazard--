@@ -1,0 +1,145 @@
+﻿@model GU_DATA.Entitys.gd_user
+
+@{
+    Layout = null;
+    ViewBag.Title = "Delete_User";
+}
+
+
+
+@Styles.Render("~/bundles/Bootstarp/css")
+
+
+
+@Styles.Render("~/bundles/Bootstarp/css")
+
+
+<div>
+   
+        <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert"
+                    aria-hidden="true">
+                &times;
+            </button>
+            注意！你正在删除 @ViewBag.Name
+        </div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatDay)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatDay)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.IP)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IP)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ip_address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ip_address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ConfirmPassword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ConfirmPassword)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ID_Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ID_Number)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ID_Number)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Change_times)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Change_times)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+<div class="form-actions no-color">
+    @Html.ActionLink("返回列表", "List_User")
+    |
+    <input type="submit" value="删除" class="btn btn-default" /> 
+
+</div>
+        }
+    </div>

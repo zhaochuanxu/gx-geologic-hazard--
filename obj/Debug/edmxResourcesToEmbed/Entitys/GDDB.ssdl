@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="gddbModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="gd_accident">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="id" Type="int" />
+    <Property Name="time" Type="datetime" Precision="0" />
+    <Property Name="lon" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="lat" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="locate" Type="varchar" MaxLength="32" />
+    <Property Name="level" Type="varchar" MaxLength="32" />
+    <Property Name="demage" Type="varchar" MaxLength="32" />
+    <Property Name="ge_charact" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="gd_loss">
+    <Key>
+      <PropertyRef Name="code" />
+    </Key>
+    <Property Name="code" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="time" Type="datetime" Precision="0" />
+    <Property Name="direct_dead" Type="uint" />
+    <Property Name="injured" Type="int" />
+    <Property Name="indirect_dead" Type="int" />
+    <Property Name="missing" Type="int" />
+    <Property Name="building_living_failing" Type="int" />
+    <Property Name="building_working_failing" Type="int" />
+    <Property Name="building_industry_failing" Type="int" />
+    <Property Name="building_living_damaged" Type="int" />
+    <Property Name="building_woring_demaged" Type="int" />
+    <Property Name="building_industry_dema" Type="int" />
+    <Property Name="other_loss" Type="decimal" Precision="10" Scale="0" />
+    <Property Name="other_loss_dec" Type="varchar" MaxLength="100" />
+    <Property Name="other" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="gd_type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="main_charact" Type="varchar" MaxLength="32" />
+    <Property Name="reason" Type="varchar" MaxLength="32" />
+    <Property Name="demange_charcat" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="gd_user">
+    <Key>
+      <PropertyRef Name="UID" />
+    </Key>
+    <Property Name="UID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="32" />
+    <Property Name="ID_Name" Type="varchar" MaxLength="32" />
+    <Property Name="ID_Number" Type="varchar" MaxLength="32" />
+    <Property Name="Phone" Type="varchar" MaxLength="32" />
+    <Property Name="Email" Type="varchar" MaxLength="32" />
+    <Property Name="CreatDay" Type="datetime" Precision="0" />
+    <Property Name="IP" Type="varchar" MaxLength="32" />
+    <Property Name="Ip address" Type="varchar" MaxLength="32" />
+    <Property Name="Address" Type="varchar" MaxLength="32" />
+    <Property Name="type" Type="varchar" MaxLength="32" />
+    <Property Name="Change_times" Type="int" />
+  </EntityType>
+  <EntityContainer Name="gddbModelStoreContainer">
+    <EntitySet Name="gd_accident" EntityType="Self.gd_accident" Schema="gddb" store:Type="Tables" />
+    <EntitySet Name="gd_loss" EntityType="Self.gd_loss" Schema="gddb" store:Type="Tables" />
+    <EntitySet Name="gd_type" EntityType="Self.gd_type" Schema="gddb" store:Type="Tables" />
+    <EntitySet Name="gd_user" EntityType="Self.gd_user" Schema="gddb" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
